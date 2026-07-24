@@ -7,7 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="ACRM">
-    <!-- ===== theme-color 由 JS 动态控制，初始值占位 ===== -->
     <meta name="theme-color" id="themeColorMeta" content="#f6f9fc">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%232563eb'/%3E%3Ctext x='50' y='55' font-size='50' text-anchor='middle' fill='white'%3E★%3C/text%3E%3C/svg%3E">
     <link rel="apple-touch-icon" sizes="180x180" href="./logo.png">
@@ -47,7 +46,6 @@
             --fade-width: 50px;
             --fade-bg: #f6f9fc;
 
-            /* ===== 颜色变量 ===== */
             --bg-body: #f6f9fc;
             --bg-card: #ffffff;
             --bg-toolbar: #ffffff;
@@ -957,7 +955,6 @@
             }
             .app-container {
                 position: fixed !important;
-                /* ===== 修复：顶部避开安全区域 + 搜索栏高度，防止名片被遮挡 ===== */
                 top: calc(var(--safe-top) + var(--floatSearch-height)) !important;
                 left: 0 !important;
                 right: 0 !important;
@@ -1139,19 +1136,97 @@
                 max-width: 100% !important;
             }
 
-            /* ===== 内嵌横屏专属规则，仅移动端横屏生效 ===== */
+            /* ==========================================================
+               横屏专属规则：手机横屏时双列卡片，竖屏时单列
+               ========================================================== */
             @media (orientation: landscape) {
+                /* 双列网格 */
                 .group-card-wrap {
                     grid-template-columns: 1fr 1fr !important;
-                    gap: 8px !important;
+                    gap: 6px !important;
                 }
+
+                /* 卡片紧凑化 */
+                .contact-card {
+                    padding: 6px 10px !important;
+                    border-radius: 10px !important;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+                }
+
+                /* 头部精简 */
+                .contact-card .card-header {
+                    margin-bottom: 2px !important;
+                }
+                .contact-card .card-name {
+                    font-size: 14px !important;
+                    line-height: 1.2 !important;
+                }
+                .contact-card .card-company {
+                    font-size: 11px !important;
+                    line-height: 1.2 !important;
+                    margin-top: 0 !important;
+                }
+
+                /* 标签行 */
+                .contact-card .tag-row {
+                    margin: 2px 0 !important;
+                    gap: 4px !important;
+                }
+                .contact-card .card-industry-tag,
+                .contact-card .card-exhibition-tag {
+                    font-size: 9px !important;
+                    padding: 1px 5px !important;
+                    border-radius: 8px !important;
+                }
+
+                /* 电话行 */
+                .card-phone-row {
+                    font-size: 12px !important;
+                    gap: 2px !important;
+                    padding-left: 2px !important;
+                }
+                .card-phone-row a {
+                    font-size: 12px !important;
+                }
+                .card-phone-row i {
+                    font-size: 11px !important;
+                    margin-right: 6px !important;
+                }
+
+                /* 详情：显示核心字段（电话已在上面单独显示，这里不再重复） */
                 .contact-card .card-details {
                     display: flex !important;
+                    flex-direction: column !important;
+                    gap: 1px !important;
+                    margin: 2px 0 4px !important;
+                    font-size: 11px !important;
                 }
+                .contact-card .card-details div {
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 4px !important;
+                    line-height: 1.3 !important;
+                }
+                .contact-card .card-details i {
+                    font-size: 10px !important;
+                    width: 14px !important;
+                    flex-shrink: 0 !important;
+                }
+                .contact-card .card-details a {
+                    font-size: 11px !important;
+                }
+
+                /* 横屏时隐藏备注、互动、操作按钮（节省空间，点击卡片可查看详情） */
                 .contact-card .card-notes,
                 .contact-card .interactions-section,
                 .contact-card .card-actions {
                     display: none !important;
+                }
+
+                /* 横屏时卡片点击反馈保留 */
+                .contact-card:active {
+                    transform: scale(0.97) !important;
+                    background: var(--bg-float-btn) !important;
                 }
             }
         }
@@ -1308,7 +1383,6 @@
         /* ===== 深色模式自适应 ===== */
         @media (prefers-color-scheme: dark) {
             :root {
-                /* ===== 暖灰色系 ===== */
                 --bg-body: #1c1c1e;
                 --bg-card: #2c2c2e;
                 --bg-toolbar: #2c2c2e;
@@ -1357,7 +1431,6 @@
                 --floatSearch-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
             }
 
-            /* ===== 额外特殊覆盖 ===== */
             .interaction-item .badge.phone {
                 background: #2c2c2e;
                 color: #60a5fa;
@@ -1389,7 +1462,6 @@
                 background: rgba(0, 0, 0, 0.6);
             }
 
-            /* ===== 修复 Splash 启动页文字颜色 ===== */
             #pwaSplash span span:first-child {
                 color: #8e8e93 !important;
             }
@@ -1397,9 +1469,6 @@
                 color: #8e8e93 !important;
             }
 
-            /* ===== 修复内联样式背景（覆盖 JS 生成的硬编码） ===== */
-
-            /* 1. 筛选抽屉中的条目 */
             .drawer-filter-item {
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
@@ -1414,7 +1483,6 @@
                 color: var(--text-muted) !important;
             }
 
-            /* 2. 设置抽屉中的菜单项 */
             .drawer-menu-item {
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
@@ -1425,7 +1493,6 @@
             .drawer-menu-item .fa-chevron-right {
                 color: var(--text-muted) !important;
             }
-            /* 清空全部数据保持红色 */
             .drawer-menu-item .fa-trash-alt {
                 color: var(--text-danger) !important;
             }
@@ -1433,7 +1500,6 @@
                 color: var(--text-danger) !important;
             }
 
-            /* 3. 统计抽屉中的条目 */
             .drawer-content div[style*="background:#f3f4f6"] {
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
@@ -1447,7 +1513,6 @@
             .drawer-content div[style*="background:#f3f4f6"] span[style*="color:#64748b"] {
                 color: var(--text-muted) !important;
             }
-            /* 统计三栏卡片背景 */
             .drawer-content div[style*="background:#ffffff"] {
                 background: var(--bg-card) !important;
             }
@@ -1464,17 +1529,14 @@
                 color: var(--text-muted) !important;
             }
 
-            /* 4. 客户详情中的三色选择标签 */
             .radio-group label {
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
             }
-
             .radio-group label input[type="radio"] {
                 accent-color: var(--text-link) !important;
             }
 
-            /* 5. 设置抽屉中 "清空全部数据" 保持红色 */
             .drawer-menu-item[data-setting="clear-all"] span {
                 color: var(--text-danger) !important;
             }
@@ -1482,7 +1544,6 @@
                 color: var(--text-danger) !important;
             }
 
-            /* 6. 分组抽屉中的条目 */
             .drawer-filter-item[data-exhibition] {
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
@@ -1497,7 +1558,6 @@
                 color: var(--text-link) !important;
             }
 
-            /* 7. 覆盖 draw-content 中的内联 div 背景 */
             .drawer-content>div>div[style*="background:#ffffff"] {
                 background: var(--bg-card) !important;
             }
@@ -1512,7 +1572,6 @@
             }
         }
 
-        /* ===== 深色模式下登录框内联样式覆盖 ===== */
         @media (prefers-color-scheme: dark) {
             #loginBox input,
             #resetBox input,
@@ -1863,19 +1922,13 @@
                 const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 meta.content = isDark ? '#1c1c1e' : '#f6f9fc';
             }
-
-            // 初始设置
             setThemeColor();
-
-            // 监听系统主题变化
             const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
             if (darkModeMedia.addEventListener) {
                 darkModeMedia.addEventListener('change', setThemeColor);
             } else if (darkModeMedia.addListener) {
                 darkModeMedia.addListener(setThemeColor);
             }
-
-            // 也监听页面可见性变化，以防主题在后台改变
             document.addEventListener('visibilitychange', () => {
                 if (!document.hidden) setThemeColor();
             });
@@ -2103,7 +2156,6 @@
                     `).join('')}
                 </div>
 
-                <!-- ====== 分割线 + 重置分组条件（与筛选页面样式完全一致） ====== -->
                 <div style="height:1px;background:var(--border-light);margin:12px 0;"></div>
                 <div style="display:flex;flex-direction:column;gap:8px;">
                     <div class="drawer-filter-item" data-reset-group style="display:flex;justify-content:space-between;align-items:center;padding:4px 10px;background:#f1f3f5;border-radius:12px;cursor:pointer;transition:0.18s;">
@@ -2118,7 +2170,6 @@
 
             drawerContent.innerHTML = html;
 
-            // 绑定展会点击事件
             drawerContent.querySelectorAll('.drawer-filter-item[data-exhibition]').forEach(item => {
                 item.addEventListener('touchstart', function() { this.style.transform = 'scale(0.98)';
                     this.style.background = '#dbeafe'; });
@@ -2134,7 +2185,6 @@
                 });
             });
 
-            // ====== 新增：重置分组条件点击事件 ======
             const resetGroupItem = drawerContent.querySelector('[data-reset-group]');
             if (resetGroupItem) {
                 resetGroupItem.addEventListener('touchstart', function() {
@@ -2899,11 +2949,8 @@
         </div>
     </div>
    <div class="card-phone-row" style="margin-top:0;display:flex;align-items:center;gap:0px;flex-wrap:wrap;padding-left:4px;">
-<!-- 图标 ↔ 手机号 -->
     <i class="fas fa-tty" style="color:#64748b;font-size:13px;margin-right:15px;"></i>
-<!-- 手机号 ↔ 行业标签 -->
     <a href="tel:${escapeHtml(c.phone)}" onclick="event.stopPropagation()" style="font-size:14px;color:#2563eb;text-decoration:none;margin-right:6px;">${escapeHtml(c.phone)}</a>
-<!-- 行业 ↔ 展会标签 -->
     <span class="card-industry-tag" style="font-size:12px;padding:2px 4px;background:transparent;color:#64748b;margin-right:2px;">${escapeHtml(c.industry)}</span>
     <span class="card-exhibition-tag" style="font-size:12px;padding:2px 4px;background:transparent;color:#64748b;">${escapeHtml(c.exhibition)}</span>
 </div>
@@ -3527,7 +3574,6 @@
                 loginMask.classList.add('show');
             });
 
-            // 密码显示/隐藏切换图标
             eyeLogin.onclick = function() {
                 if (pwdInput.type === 'password') {
                     pwdInput.type = 'text';
