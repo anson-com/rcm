@@ -46,7 +46,7 @@
             --fade-width: 50px;
             --fade-bg: #f6f9fc;
 
-            /* ===== 新增颜色变量 ===== */
+            /* ===== 颜色变量 ===== */
             --bg-body: #f6f9fc;
             --bg-card: #ffffff;
             --bg-toolbar: #ffffff;
@@ -482,62 +482,252 @@
         /* ===== 深色模式自适应 ===== */
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-body: #0f1724;
-                --bg-card: #1a2332;
-                --bg-toolbar: #1a2332;
-                --bg-input: #1e293b;
-                --bg-select: #1e293b;
-                --bg-stat: #1a2332;
-                --bg-modal: #1a2332;
-                --bg-drawer: #1a2332;
-                --bg-tab: #0f1724;
-                --bg-search-bar: #1a2332;
-                --bg-float-btn: #2d3748;
-                --bg-tag-industry: #1e293b;
-                --bg-tag-exhibition: #1e293b;
-                --bg-notes: #1e293b;
-                --bg-interaction: #1e293b;
-                --bg-badge: #2d3748;
-                --bg-manage-item: #1a2332;
-                --bg-manage-item-hover: #2d3748;
-                --bg-drawer-item: #2d3748;
-                --bg-drawer-item-active: #1e293b;
-                --bg-login-box: #1a2332;
-                --bg-init-box: #1a2332;
-                --bg-splash: #0f1724;
+                /* ===== 暖灰色系 ===== */
+                --bg-body: #1c1c1e;
+                --bg-card: #2c2c2e;
+                --bg-toolbar: #2c2c2e;
+                --bg-input: #1c1c1e;
+                --bg-select: #1c1c1e;
+                --bg-stat: #2c2c2e;
+                --bg-modal: #2c2c2e;
+                --bg-drawer: #2c2c2e;
+                --bg-tab: #1c1c1e;
+                --bg-search-bar: #2c2c2e;
+                --bg-float-btn: #3a3a3c;
+                --bg-tag-industry: #2c2c2e;
+                --bg-tag-exhibition: #2c2c2e;
+                --bg-notes: #1c1c1e;
+                --bg-interaction: #1c1c1e;
+                --bg-badge: #3a3a3c;
+                --bg-manage-item: #2c2c2e;
+                --bg-manage-item-hover: #3a3a3c;
+                --bg-drawer-item: #3a3a3c;
+                --bg-drawer-item-active: #2c2c2e;
+                --bg-login-box: #2c2c2e;
+                --bg-init-box: #2c2c2e;
+                --bg-splash: #1c1c1e;
 
                 --text-primary: #e8edf5;
                 --text-secondary: #c9d0db;
-                --text-muted: #6b7a8f;
-                --text-light: #4a5568;
+                --text-muted: #8e8e93;
+                --text-light: #636366;
                 --text-white: #ffffff;
                 --text-link: #60a5fa;
                 --text-danger: #f87171;
                 --text-success: #34d399;
                 --text-warning: #fbbf24;
 
-                --border-light: #2d3748;
-                --border-medium: #3d4a5c;
-                --border-dark: #4a5568;
+                --border-light: #3a3a3c;
+                --border-medium: #4a4a4c;
+                --border-dark: #5a5a5c;
 
-                --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-                --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-                --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.5);
-                --shadow-card: 0 2px 6px rgba(0,0,0,0.2);
+                --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+                --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+                --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.6);
+                --shadow-card: 0 2px 6px rgba(0,0,0,0.3);
 
-                --scrollbar-color: #4a5568;
-                --fade-bg: #0f1724;
-                --floatSearch-shadow: 0 4px 16px rgba(0,0,0,0.4);
+                --scrollbar-color: #5a5a5c;
+                --fade-bg: #1c1c1e;
+                --floatSearch-shadow: 0 4px 16px rgba(0,0,0,0.5);
             }
-            /* 额外特殊覆盖 */
-            .interaction-item .badge.phone { background: #1e293b; color: #60a5fa; }
-            .interaction-item .badge.wechat { background: #1e293b; color: #34d399; }
-            .interaction-item .badge.qq { background: #1e293b; color: #fbbf24; }
-            .interaction-item .badge.meeting { background: #1e293b; color: #818cf8; }
-            .interaction-item .badge.email { background: #1e293b; color: #f472b6; }
-            .manage-del-btn:hover { background: #1e293b; color: #f87171; }
-            .modal-overlay { background: rgba(0,0,0,0.6); }
-            .mobile-drawer-overlay { background: rgba(0,0,0,0.5); }
+
+            /* ===== 额外特殊覆盖 ===== */
+            .interaction-item .badge.phone { background: #2c2c2e; color: #60a5fa; }
+            .interaction-item .badge.wechat { background: #2c2c2e; color: #34d399; }
+            .interaction-item .badge.qq { background: #2c2c2e; color: #fbbf24; }
+            .interaction-item .badge.meeting { background: #2c2c2e; color: #818cf8; }
+            .interaction-item .badge.email { background: #2c2c2e; color: #f472b6; }
+            .manage-del-btn:hover { background: #2c2c2e; color: #f87171; }
+            .modal-overlay { background: rgba(0,0,0,0.7); }
+            .mobile-drawer-overlay { background: rgba(0,0,0,0.6); }
+
+            /* ===== 修复 Splash 启动页文字颜色 ===== */
+            #pwaSplash span span:first-child { color: #ffffff !important; }
+            #pwaSplash span span:last-child { color: #8e8e93 !important; }
+
+            /* ===== 修复内联样式背景（覆盖 JS 生成的硬编码） ===== */
+
+            /* 1. 筛选抽屉中的条目 */
+            .drawer-filter-item {
+                background: var(--bg-drawer-item) !important;
+                color: var(--text-primary) !important;
+            }
+            .drawer-filter-item .fa-check,
+            .drawer-filter-item .fa-chevron-right {
+                color: var(--text-muted) !important;
+            }
+            .drawer-filter-item .fa-th,
+            .drawer-filter-item .fa-tags,
+            .drawer-filter-item .fa-undo {
+                color: var(--text-muted) !important;
+            }
+
+            /* 2. 设置抽屉中的菜单项 */
+            .drawer-menu-item {
+                background: var(--bg-drawer-item) !important;
+                color: var(--text-primary) !important;
+            }
+            .drawer-menu-item i {
+                color: var(--text-muted) !important;
+            }
+            .drawer-menu-item .fa-chevron-right {
+                color: var(--text-muted) !important;
+            }
+            /* 清空全部数据保持红色 */
+            .drawer-menu-item .fa-trash-alt {
+                color: var(--text-danger) !important;
+            }
+            .drawer-menu-item span[style*="color:#ef4444"] {
+                color: var(--text-danger) !important;
+            }
+
+            /* 3. 统计抽屉中的条目 */
+            .drawer-content div[style*="background:#f3f4f6"] {
+                background: var(--bg-drawer-item) !important;
+                color: var(--text-primary) !important;
+            }
+            .drawer-content div[style*="background:#f3f4f6"] span {
+                color: var(--text-primary) !important;
+            }
+            .drawer-content div[style*="background:#f3f4f6"] span[style*="color:#2563eb"] {
+                color: var(--text-link) !important;
+            }
+            .drawer-content div[style*="background:#f3f4f6"] span[style*="color:#64748b"] {
+                color: var(--text-muted) !important;
+            }
+            /* 统计三栏卡片背景 */
+            .drawer-content div[style*="background:#ffffff"] {
+                background: var(--bg-card) !important;
+            }
+            .drawer-content div[style*="color:#1e293b"] {
+                color: var(--text-primary) !important;
+            }
+            .drawer-content div[style*="color:#64748b"] {
+                color: var(--text-muted) !important;
+            }
+            .drawer-content div[style*="color:#334155"] {
+                color: var(--text-secondary) !important;
+            }
+            .drawer-content div[style*="color:#94a3b8"] {
+                color: var(--text-muted) !important;
+            }
+
+            /* 4. 客户详情中的三色选择标签 */
+            .radio-group label {
+                background: var(--bg-drawer-item) !important;
+                color: var(--text-primary) !important;
+            }
+            .radio-group label span {
+                color: var(--text-primary) !important;
+            }
+            .radio-group label input[type="radio"] {
+                accent-color: var(--text-link) !important;
+            }
+
+            /* 5. 设置抽屉中 "清空全部数据" 保持红色 */
+            .drawer-menu-item[data-setting="clear-all"] span {
+                color: var(--text-danger) !important;
+            }
+            .drawer-menu-item[data-setting="clear-all"] i {
+                color: var(--text-danger) !important;
+            }
+
+            /* 6. 分组抽屉中的条目 */
+            .drawer-filter-item[data-exhibition] {
+                background: var(--bg-drawer-item) !important;
+                color: var(--text-primary) !important;
+            }
+            .drawer-filter-item[data-exhibition] .fa-building {
+                color: var(--text-muted) !important;
+            }
+            .drawer-filter-item[data-exhibition] .fa-th {
+                color: var(--text-muted) !important;
+            }
+            .drawer-filter-item[data-exhibition] .fa-check {
+                color: var(--text-link) !important;
+            }
+
+            /* 7. 覆盖 draw-content 中的内联 div 背景 */
+            .drawer-content > div > div[style*="background:#ffffff"] {
+                background: var(--bg-card) !important;
+            }
+            .drawer-content > div > div[style*="background:#f1f3f5"] {
+                background: var(--bg-drawer-item) !important;
+            }
+            .drawer-content > div > div[style*="background:#f1f5f9"] {
+                background: var(--bg-drawer-item) !important;
+            }
+            .drawer-content > div > div[style*="background:#f3f4f6"] {
+                background: var(--bg-drawer-item) !important;
+            }
+        }
+
+        /* ===== 深色模式下登录框内联样式覆盖 ===== */
+        @media (prefers-color-scheme: dark) {
+            #loginBox input,
+            #resetBox input,
+            #initPwdBox input {
+                background: #1c1c1e !important;
+                border-color: #3a3a3c !important;
+                color: #e8edf5 !important;
+            }
+            #loginBox input:focus,
+            #resetBox input:focus,
+            #initPwdBox input:focus {
+                border-color: #60a5fa !important;
+            }
+            #loginBox h2,
+            #resetBox h2,
+            #initPwdBox h2 {
+                color: #e8edf5 !important;
+            }
+            #loginBox h2 span:first-child,
+            #resetBox h2 span:first-child,
+            #initPwdBox h2 span:first-child {
+                color: #ffffff !important;
+            }
+            #loginBox h2 span:last-child,
+            #resetBox h2 span:last-child,
+            #initPwdBox h2 span:last-child {
+                color: #8e8e93 !important;
+            }
+            #loginBox .btn,
+            #resetBox .btn,
+            #initPwdBox .btn {
+                background: #2c2c2e !important;
+                color: #e8edf5 !important;
+            }
+            #loginBox #loginBtn,
+            #resetBox #confirmResetBtn,
+            #initPwdBox #setInitSingleBtn {
+                background: #2563eb !important;
+                color: #ffffff !important;
+            }
+            #loginBox #switchActionBtn,
+            #resetBox #backFromResetBtn,
+            #initPwdBox #backFromInitBtn {
+                background: #3a3a3c !important;
+                color: #60a5fa !important;
+            }
+            #loginMask, #resetMask {
+                background: #1c1c1e !important;
+            }
+            #loginBox,
+            #resetBox,
+            #initPwdBox {
+                background: #2c2c2e !important;
+            }
+            #loginBox .fa-eye,
+            #resetBox .fa-eye,
+            #initPwdBox .fa-eye {
+                color: #8e8e93 !important;
+            }
+            #pwaSplash {
+                background: #1c1c1e !important;
+            }
+            #pwaSplash svg circle {
+                fill: #2563eb !important;
+            }
         }
     </style>
 </head>
