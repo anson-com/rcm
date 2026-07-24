@@ -117,7 +117,17 @@
         .btn-danger { background: var(--text-danger); color: #fff; border-color: var(--text-danger); }
         .btn-danger:hover { background: #dc2626; box-shadow: 0 4px 12px rgba(239,68,68,0.3); transform: translateY(-1px); }
         .btn-sm { padding: 2px 12px; font-size: 12px; }
-        .btn-icon { padding: 8px 10px; }
+        .btn-icon {
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+}
         .toolbar { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 28px; background: var(--bg-toolbar); padding: 16px 20px; border-radius: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); }
         .search-wrapper { flex: 1; min-width: 200px; position: relative; }
         .search-wrapper i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-light); }
@@ -617,9 +627,7 @@
                 background: var(--bg-drawer-item) !important;
                 color: var(--text-primary) !important;
             }
-            .radio-group label span {
-                color: var(--text-primary) !important;
-            }
+           
             .radio-group label input[type="radio"] {
                 accent-color: var(--text-link) !important;
             }
