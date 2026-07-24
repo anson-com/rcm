@@ -1,4 +1,5 @@
-"name": "AnsonCRM",
+{
+  "name": "AnsonCRM",
   "short_name": "ACRM",
   "version": "2.0.0",
   "description": "离线CRM管理，轻量化本地防泄露解决方案",
