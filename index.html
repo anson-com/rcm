@@ -325,9 +325,11 @@
             .float-menu-btn:active { transform: scale(0.94) !important; background: var(--border-dark) !important; }
 
             body { padding: 0 !important; background: var(--bg-body) !important; }
-            .app-container {
-                position: fixed !important;
-                top: var(--floatSearch-height) !important;
+           .app-container {
+    position: fixed !important;
+    top: 60px !important;  /* ← 需要改成固定值 */
+    ...
+}
                 left: 0 !important;
                 right: 0 !important;
                 bottom: calc(50px + var(--safe-bottom)) !important;
@@ -455,7 +457,12 @@
                     display: none !important;
                 }
             }
-        }
+/* ====== 修复 Chrome PWA 竖屏顶部遮挡 ====== */
+            body::before,
+            body::after {
+                display: none !important;
+            }
+        }  /* ← 这是媒体查询的结束大括号 */
 
         /* ===== 额外密码样式 ===== */
         #loginBox button:active, #resetBox button:active, #initPwdBox button:active {
