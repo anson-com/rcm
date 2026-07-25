@@ -776,7 +776,7 @@
     background: var(--bg-drawer);
     border-radius: 29px;
     /* 关键改动：限制最大高度，横竖屏统一预留顶部空隙 */
-    max-height: min(88vh, 620px);
+    max-height: min(98vh, 620px);
     transform: translateY(110%);
     transition: transform 0.24s ease;
     overflow: hidden;
@@ -1247,7 +1247,7 @@
             padding-bottom: calc(var(--safe-bottom) + 12px) !important;
         }
         .modal-overlay.active .modal {
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 8px)), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 6px)), 620px) !important;
             height: auto !important;
             /* ✅ 圆角强制29px */
             border-radius: 29px !important;
@@ -1262,7 +1262,7 @@
             /* ✅ 圆角统一29px */
             border-radius: 29px !important;
             /* 高度计算同步底部间距，防止超出屏幕 */
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 8px)), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 6px)), 620px) !important;
         }
     }
 }
