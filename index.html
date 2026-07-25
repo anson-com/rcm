@@ -1235,27 +1235,34 @@
 
 @media (max-width: 640px), (max-height: 640px) {
     @media (orientation: landscape) {
-        /* ========== 横屏弹窗Modal（新增/编辑客户等弹窗） ========== */
+        /* ========== 横屏弹窗Modal（新增客户、行业分类、展会分类弹窗） ========== */
         .modal-overlay.active {
             align-items: flex-start !important;
             justify-content: center !important;
+            /* 顶部距离：刘海 + 搜索栏 + 4px空隙（维持原有不变） */
             padding-top: calc(var(--safe-top) + var(--floatSearch-height) + 4px) !important;
             padding-left: 8px !important;
             padding-right: 8px !important;
-            padding-bottom: 12px !important;
+            /* ✅ 统一标准底部间距：避开底部手势条，预留安全空隙 */
+            padding-bottom: calc(var(--safe-bottom) + 12px) !important;
         }
         .modal-overlay.active .modal {
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 12px), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 16px)), 620px) !important;
             height: auto !important;
+            /* ✅ 圆角强制29px */
+            border-radius: 29px !important;
         }
 
-        /* ========== 横屏底部抽屉【筛选/分组/统计/设置】重点修复 ========== */
+        /* ========== 横屏底部抽屉【筛选/分组/统计/设置】 ========== */
         .mobile-drawer {
-            /* 横屏强制限制最大高度，顶部避开悬浮搜索栏 */
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 12px), 620px) !important;
-            top: calc(var(--safe-top) + var(--floatSearch-height) + 8px) !important;
-            bottom: calc(var(--safe-bottom) + 0px) !important;
-            border-radius: 20px !important;
+            /* 顶部位置保持不变，避开搜索栏 */
+            top: calc(var(--safe-top) + var(--floatSearch-height) + 4px) !important;
+            /* ✅ 底部：距离底部安全区预留标准空隙，不贴底线 */
+            bottom: calc(var(--safe-bottom) + 12px) !important;
+            /* ✅ 圆角统一29px */
+            border-radius: 29px !important;
+            /* 高度计算同步底部间距，防止超出屏幕 */
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 16px)), 620px) !important;
         }
     }
 }
