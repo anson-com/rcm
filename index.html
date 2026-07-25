@@ -2101,7 +2101,7 @@
         function renderFilterDrawer() {
             const currentSelect = industryFilterEl.value;
             let html = `
-            <div style="padding:4px 0;">
+            <div style="padding:0px 0;">
                 <div style="font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
                     <i class="fas fa-filter" style="color:#2563eb;font-size:18px;"></i> 筛选 - 行业
                 </div>
@@ -2166,7 +2166,7 @@
         function renderGroupDrawer() {
             if (!exhibitionList || exhibitionList.length === 0) {
                 drawerContent.innerHTML = `
-                <div style="padding:4px 0;">
+                <div style="padding:0px 0;">
                     <div style="font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
                         <i class="fas fa-list" style="color:#2563eb;font-size:18px;"></i> 分组 - 展会
                     </div>
@@ -2177,7 +2177,7 @@
             }
             const currentSelect = exhibitionFilterEl.value;
             let html = `
-            <div style="padding:4px 0;">
+            <div style="padding:0px 0;">
                 <div style="font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
                     <i class="fas fa-list" style="color:#2563eb;font-size:18px;"></i> 分组 - 展会
                 </div>
@@ -2326,7 +2326,7 @@
                 `).join('');
 
             let html = `
-            <div style="padding:4px 0;">
+            <div style="padding:0px 0;">
                 <div style="font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
                     <i class="fas fa-chart-pie" style="color:#2563eb;font-size:18px;"></i> 数据统计
                 </div>
@@ -2374,7 +2374,7 @@
 
         function renderSettingDrawer() {
             let html = `
-            <div style="padding:4px 0;">
+            <div style="padding:0px 0;">
                 <div style="font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
                     <i class="fas fa-cog" style="color:#2563eb;font-size:18px;"></i> 设置
                 </div>
