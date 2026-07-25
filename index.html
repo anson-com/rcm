@@ -776,7 +776,7 @@
     background: var(--bg-drawer);
     border-radius: 29px;
     /* 关键改动：限制最大高度，横竖屏统一预留顶部空隙 */
-    max-height: 118vh;
+    max-height: 128vh;
     /* max-height: min(98vh, 620px);*/
     transform: translateY(110%);
     transition: transform 0.24s ease;
@@ -1241,7 +1241,7 @@
             align-items: flex-start !important;
             justify-content: center !important;
             /* 顶部距离：刘海 + 搜索栏 + 4px空隙（维持原有不变） */
-            padding-top: calc(var(--safe-top) + var(--floatSearch-height) + 4px) !important;
+            padding-top: calc(var(--safe-top) + var(--floatSearch-height) + 0px) !important;
             padding-left: 8px !important;
             padding-right: 8px !important;
             /* ✅ 统一标准底部间距：避开底部手势条，预留安全空隙 */
@@ -1257,7 +1257,7 @@
         /* ========== 横屏底部抽屉【筛选/分组/统计/设置】 ========== */
         .mobile-drawer {
             /* 顶部位置保持不变，避开搜索栏 */
-            top: calc(var(--safe-top) + var(--floatSearch-height) + 4px) !important;
+            top: calc(var(--safe-top) + var(--floatSearch-height) + 0px) !important;
             /* ✅ 底部：距离底部安全区预留标准空隙，不贴底线 */
             bottom: calc(var(--safe-bottom) + 0px) !important;
             /* ✅ 圆角统一29px */
