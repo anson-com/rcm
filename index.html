@@ -587,11 +587,11 @@
         }
         .modal {
             background: var(--bg-modal);
-            max-width: 360px;
+            max-width: 540px;
             max-height: 90vh;
             width: 100%;
-            border-radius: 28px;
-            padding: 12px 12px;
+            border-radius: 29px;
+            padding: 16px 16px;
             box-shadow: var(--shadow-lg);
             animation: fadeUp .2s ease;
             overflow-y: auto;
@@ -633,7 +633,7 @@
         .form-group select {
             width: 100%;
             padding: 10px 14px;
-            border-radius: 14px;
+            border-radius: 29px;/* ✅ 这里就是圆角 */
             border: 1px solid var(--border-medium);
             font-size: 14px;
             transition: .2s;
@@ -671,7 +671,7 @@
             justify-content: space-between;
             padding: 0px 12px;
             border: 1px solid var(--border-medium);
-            border-radius: 14px;
+            border-radius: 29px;/* ✅ 就是这里！条目圆角 */
             margin-bottom: 3px;
             background: var(--bg-manage-item);
             transition: 0.2s ease all;
@@ -719,7 +719,7 @@
             min-width: 220px;
             padding: 1px 18px;
             border: 1px solid var(--border-medium);
-            border-radius: 14px;
+            border-radius: 29px;/* ✅ 这个是分类弹窗内输入框圆角 */
             font-size: 13px;
             background: var(--bg-card);
             transition: all 0.2s ease;
@@ -1228,6 +1228,14 @@
                     transform: scale(0.97) !important;
                     background: var(--bg-float-btn) !important;
                 }
+            }
+            /* ===== 移动端弹窗左右边距 12px ===== */
+            .modal-overlay {
+                padding: 20px 12px !important;
+            }
+            .modal {
+                max-width: 100% !important;
+                width: 100% !important;
             }
         }
 
