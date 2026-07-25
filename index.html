@@ -1245,10 +1245,10 @@
             padding-left: 8px !important;
             padding-right: 8px !important;
             /* ✅ 统一标准底部间距：避开底部手势条，预留安全空隙 */
-            padding-bottom: calc(var(--safe-bottom) + 12px) !important;
+            padding-bottom: calc(var(--safe-bottom) + 0px) !important;
         }
         .modal-overlay.active .modal {
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 6px)), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 0px)), 620px) !important;
             height: auto !important;
             /* ✅ 圆角强制29px */
             border-radius: 29px !important;
@@ -1263,7 +1263,7 @@
             /* ✅ 圆角统一29px */
             border-radius: 29px !important;
             /* 高度计算同步底部间距，防止超出屏幕 */
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 6px)), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - calc(var(--safe-bottom) + 0px)), 620px) !important;
         }
     }
 }
