@@ -766,20 +766,21 @@
         .mobile-drawer-overlay.active {
             display: block;
         }
-        .mobile-drawer {
-            position: fixed;
-           left: 8px;   /* ✅ 抽屉距离屏幕左侧距离 */
-    right: 8px;  /* ✅ 抽屉距离屏幕右侧距离 */
-            bottom: calc(var(--safe-bottom) + 0px);
-            background: var(--bg-drawer);
-            border-radius: 29px;
-            max-height: 98vh;
-            transform: translateY(110%);
-            transition: transform 0.24s ease;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+       .mobile-drawer {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: calc(var(--safe-bottom) + 0px);
+    background: var(--bg-drawer);
+    border-radius: 29px;
+    /* 关键改动：限制最大高度，横竖屏统一预留顶部空隙 */
+    max-height: min(88vh, 620px);
+    transform: translateY(110%);
+    transition: transform 0.24s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
         .mobile-drawer-overlay.active .mobile-drawer {
             transform: translateY(0);
         }
