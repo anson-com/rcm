@@ -1235,23 +1235,27 @@
 
 @media (max-width: 640px), (max-height: 640px) {
     @media (orientation: landscape) {
-        /* 只修改激活状态下的弹窗遮罩，不影响未激活overlay，杜绝异常触发 */
+        /* ========== 横屏弹窗Modal（新增/编辑客户等弹窗） ========== */
         .modal-overlay.active {
             align-items: flex-start !important;
             justify-content: center !important;
             padding-top: calc(var(--safe-top) + var(--floatSearch-height) + 4px) !important;
             padding-left: 8px !important;
             padding-right: 8px !important;
-            /* 保留原有底部padding，防止弹窗紧贴屏幕导致内容被系统手势遮挡 */
             padding-bottom: 12px !important;
         }
         .modal-overlay.active .modal {
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 0px), 620px) !important;
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 12px), 620px) !important;
             height: auto !important;
         }
 
-        .mobile-drawer-overlay .mobile-drawer {
-            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 0px), 620px) !important;
+        /* ========== 横屏底部抽屉【筛选/分组/统计/设置】重点修复 ========== */
+        .mobile-drawer {
+            /* 横屏强制限制最大高度，顶部避开悬浮搜索栏 */
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 12px), 620px) !important;
+            top: calc(var(--safe-top) + var(--floatSearch-height) + 8px) !important;
+            bottom: calc(var(--safe-bottom) + 0px) !important;
+            border-radius: 20px !important;
         }
     }
 }
