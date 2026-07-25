@@ -1230,6 +1230,31 @@
                     background: var(--bg-float-btn) !important;
                 }
             }
+
+@media (max-width: 640px), (max-height: 640px) {
+    @media (orientation: landscape) {
+        /* 弹窗遮罩：垂直排布改为从上往下，不再居中 */
+        .modal-overlay {
+            align-items: flex-start !important;
+            /* 顶部预留距离 = 安全区 + 搜索栏高度 + 间距，0px可调整为0紧贴 */
+            padding-top: calc(var(--safe-top) + var(--floatSearch-height) + 8px) !important;
+            /* 移除pointer-events:none，遮罩完整拦截点击，点击遮罩关闭弹窗，不会穿透到搜索框 */
+        }
+        /* 弹窗本体高度限制 */
+        .modal-overlay .modal {
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 0px), 620px) !important;
+        }
+
+        /* 底部抽屉遮罩、抽屉本体 */
+        .mobile-drawer-overlay {
+            /* 遮罩保持完整拦截，不开启点击穿透 */
+        }
+        .mobile-drawer-overlay .mobile-drawer {
+            max-height: min(calc(100vh - var(--safe-top) - var(--floatSearch-height) - 16px), 620px) !important;
+        }
+    }
+}
+
             /* ===== 移动端弹窗左右边距 12px ===== */
             .modal-overlay {
                 padding: 20px 8px !important;
