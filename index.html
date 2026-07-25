@@ -587,11 +587,11 @@
         }
         .modal {
             background: var(--bg-modal);
-            max-width: 540px;
+            max-width: 520px;
             max-height: 90vh;
             width: 100%;
             border-radius: 29px;
-            padding: 16px 16px;
+            padding: 12px 12px;
             box-shadow: var(--shadow-lg);
             animation: fadeUp .2s ease;
             overflow-y: auto;
@@ -675,7 +675,7 @@
             margin-bottom: 3px;
             background: var(--bg-manage-item);
             transition: 0.2s ease all;
-            min-height: 14px;
+            height: 32px;
             font-size: 14px;
             color: var(--text-primary);
         }
@@ -723,7 +723,7 @@
             font-size: 13px;
             background: var(--bg-card);
             transition: all 0.2s ease;
-            min-height: 32px;
+            height: 32px;
             color: var(--text-primary);
         }
         .add-tag-row input::placeholder {
@@ -768,12 +768,12 @@
         }
         .mobile-drawer {
             position: fixed;
-            left: 12px;
-            right: 12px;
+           left: 8px;   /* ✅ 抽屉距离屏幕左侧距离 */
+    right: 8px;  /* ✅ 抽屉距离屏幕右侧距离 */
             bottom: calc(var(--safe-bottom) + 58px);
             background: var(--bg-drawer);
             border-radius: 29px;
-            max-height: 118vh;
+            max-height: 128vh;
             transform: translateY(110%);
             transition: transform 0.24s ease;
             overflow: hidden;
@@ -793,7 +793,7 @@
         .drawer-content {
             flex: 1;
             overflow-y: auto;
-            padding: 8px 16px 16px;
+            padding: 0px 12px 16px;
             color: var(--text-primary);
             background: var(--bg-drawer);
         }
@@ -1231,7 +1231,7 @@
             }
             /* ===== 移动端弹窗左右边距 12px ===== */
             .modal-overlay {
-                padding: 20px 12px !important;
+                padding: 20px 8px !important;
             }
             .modal {
                 max-width: 100% !important;
@@ -1365,14 +1365,14 @@
             width: 100%;
             min-width: 100%;
         }
-        #industryListWrap,
-        #exhibitionListWrap {
-            max-height: 320px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            margin: 0px 0;
-            padding-right: 4px;
-        }
+       #industryListWrap,
+#exhibitionListWrap {
+    max-height: 315px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0px 0 0px 0;
+    padding-right: 4px;
+}
         #industryListWrap::-webkit-scrollbar,
         #exhibitionListWrap::-webkit-scrollbar {
             width: 4px;
